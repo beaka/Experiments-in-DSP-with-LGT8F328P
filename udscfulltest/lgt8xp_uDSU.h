@@ -10,8 +10,82 @@
 
 #include <avr/io.h>
 
+extern "C" unsigned long local_xmacsu0(
+    int dx,
+    unsigned int dy
+);
+
+extern "C" unsigned long local_xmacus0(
+    unsigned int dx,
+    int dy
+);
+
+extern "C" unsigned long local_xmacss0(
+    int dx,
+    int dy
+);
+
+extern "C" long local_smacuu0(
+    unsigned int dx,
+    unsigned int dy
+);
+
 #define DSU_MM_FAST		0x00
 #define DSU_MM_NORMAL	0x40
+
+// ============================================================================
+// LOCAL FUNCTIONS EXPORTED BY udsu_local.S
+// ============================================================================
+
+extern "C" void local_dsu_reset(void);
+
+extern "C" unsigned long local_xmnluu(
+    unsigned int dx,
+    unsigned int dy
+);
+
+extern "C" long local_xmnlss(
+    int dx,
+    int dy
+);
+
+extern "C" unsigned long local_fxmnluu(
+    unsigned int dx,
+    unsigned int dy
+);
+
+extern "C" long local_fxmnlss(
+    int dx,
+    int dy
+);
+
+extern "C" unsigned long local_xmscuu0(
+    unsigned int dx,
+    unsigned int dy
+);
+
+extern "C" unsigned long local_xmscuu1(
+    unsigned long da,
+    unsigned int dx,
+    unsigned int dy
+);
+
+extern "C" unsigned long local_xmscss0(
+    int dx,
+    int dy
+);
+
+extern "C" unsigned long local_xmscss1(
+    unsigned long da,
+    int dx,
+    int dy
+);
+
+extern "C" long local_dsu_ashr2(
+    unsigned char shn
+);
+
+extern "C" unsigned long local_dsu_div0(void);
 
 extern "C" void dsu_init(unsigned char dsu_mm);
 
